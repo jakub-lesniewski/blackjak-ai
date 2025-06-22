@@ -26,8 +26,11 @@ class Card:
         self.rank = rank
         self.suit = suit
 
-    def print_card(self):
-        print(f"{self.rank} of {self.suit}")
+    def __str__(self):
+        return f"{self.rank} of {self.suit}"
+    
+    def __repr__(self):
+        return f"Card(rank={self.rank!r}, suit={self.suit!r})"
 
     def __eq__(self, card):
         return ranks[self.rank] == ranks[card.rank]
